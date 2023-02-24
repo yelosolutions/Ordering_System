@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% block content%}
+<form id="orderForm">
+    <!-- Step 1 - Order Information -->
+    <div id="step1">
+        <label for="contactNumber">CONTACT SMS #: *</label>
+        <input type="text" id="contactNumber" required>
+    
+        <label for="numPages">NUMBER OF PAGES:</label>
+        <input type="number" id="numPages">
+    
+        <label for="deadline">DEADLINE:</label>
+        <input type="date" id="deadline">
+    
+        <label for="topic">TOPIC:</label>
+        <input type="text" id="topic">
+    
+        <button type="button" id="previewOrderBtn">Preview Order</button>
+    </div>
+
+    <!-- Step 2 - Preview Order -->
+    <div id="step2" style="display: none;">
+        <!-- Show order information -->
+        <h1>Preview Order</h1>
+        <p>Contact SMS #: {{ contact_sms }}</p>
+        <p>Number of Pages Required: {{ num_pages }}</p>
+        <p>Deadline: {{ deadline }}</p>
+        <p>Topic: {{ topic }}</p>
+        <input type="submit" value="Add Files and Paypal">
+    </div>
+    
+    <!-- Step 3 - Add Files & Payment -->
+    <div id="step3" style="display: none;">
+        <!-- Add file input fields -->
+        <!-- Add Paypal payment form -->
+        <!-- Add confirmation message -->
+        <label>Upload Files:</label>
+        <input type="file" name="files">
+        <br>
+        <label>Pay with Paypal:</label>
+        <input type="checkbox" name="paypal">
+        <br>
+        <input type="submit" value="Confirm Order">
+    </div>
+</form>
+{% endblock %}
