@@ -4,7 +4,7 @@ from app import app
 
 @app.route('/')
 def order_info():
-    return render_template('order_form.html')
+    return render_template('order3.html')
 
 #@app.route('/preview_order', methods=['GET', 'POST'])
 #def preview_order():
